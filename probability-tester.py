@@ -40,7 +40,7 @@ for i in range(0, iterations):
     # list to record throws
     throws = []
 
-    # keep appending heads or tails (0 or 1) to list until last 3 throws were all heads (1) or all tails (0)
+    # keep appending heads or tails (1 or 0) to list until last 3 throws were all heads (1) or all tails (0)
     while throws[-3:] != [1, 1, 1] and throws[-3:] != [0, 0, 0]:
         throws.append(random.choice((0, 1)))
         tosses += 1
@@ -51,6 +51,9 @@ for i in range(0, iterations):
         wins += 1
     else:
         losses += 1
+
+    # record the final throw
+    tosses += 1
 
 executionTime = time() - startTime
 
